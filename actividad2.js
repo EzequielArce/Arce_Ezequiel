@@ -33,7 +33,7 @@ async function EjecucionSecuencial(){
 async function EjecucionParalela(){
     console.log("--- Ejecucion Paralela ---")
 
-    const usuariosPromises = [1, 2, 3].map(id => obtenerUsuario(urlUsuarios, id))
+    const usuariosPromises = [1, 2, 3].map(indice => obtenerUsuario(urlUsuarios, indice))
     const usuarios = await Promise.all(usuariosPromises)
 
     const publicacionesPromises = usuarios.map(usuario => obtenerPosts(urlPost, usuario.id))
